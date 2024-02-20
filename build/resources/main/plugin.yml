@@ -1,0 +1,22 @@
+main: net.zetmine.coralvibes.Main
+name: CoralVibes
+version: BETA-0.1
+author: ZetMine
+api-version: 1.17
+encoding: UTF-8
+commands:
+  broadcast:
+    permission: coralvibe.broadcast
+    description: Send a message to everyone on the server.
+    aliases: [bc]
+  maintenance:
+    permission: coralvibe.maintenance
+    description: Enable or disable the server maintenance.
+  hologram:
+    permission: coralvibe.hologram
+    description: Spawn an hologram
+    aliases: [holo]
+  vanish:
+    permission: coralvibe.vanish
+    description: Vanish
+    aliases: [ holo ]

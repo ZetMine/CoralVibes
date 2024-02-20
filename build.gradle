@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+}
+
+group 'net.zetmine'
+version '1.0-SNAPSHOT'
+
+repositories {
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+        content {
+            includeGroup 'org.bukkit'
+            includeGroup 'org.spigotmc'
+        }
+    }
+    mavenCentral()
+    mavenLocal()
+    maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/public' }
+    maven { url = 'https://oss.sonatype.org/content/repositories/central' }
+    maven { url "https://repo.dmulloy2.net/repository/public/" }
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot:1.20.2-R0.1-SNAPSHOT'
+    compileOnly 'net.luckperms:api:5.4'
+    compileOnly 'com.comphenix.protocol:ProtocolLib:5.1.0'
+    compileOnly "com.github.Echo24h:ColorAPI:1.0"
+    implementation 'mysql:mysql-connector-java:8.0.28'
+
+}
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
