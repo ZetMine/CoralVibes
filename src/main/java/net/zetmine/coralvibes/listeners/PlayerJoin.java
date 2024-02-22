@@ -1,7 +1,9 @@
 package net.zetmine.coralvibes.listeners;
 
 import net.luckperms.api.LuckPerms;
+import net.zetmine.coralvibes.commands.Vanish;
 import net.zetmine.coralvibes.utils.*;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -15,6 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 public class PlayerJoin implements Listener {
 
@@ -33,6 +36,7 @@ public class PlayerJoin implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) throws SQLException {
         Player player = event.getPlayer();
         Utils utils = new Utils();
+        Vanish vanish = new Vanish();
         ScoreboardUpdater scoreboardUpdater = new ScoreboardUpdater();
 
         if ((boolean)configManager.getData("maintenance") && !player.isOp()){
@@ -78,6 +82,12 @@ public class PlayerJoin implements Listener {
             e.printStackTrace();
         }
 
+        for ( UUID vanishPlayerUUID : vanish.vanishedPlayers) {
+            if (player.equals(Bukkit.getPlayer(vanishPlayerUUID)))
+                continue;
+            Player vanishPlayer = Bukkit.getPlayer(vanishPlayerUUID);
+            player.hidePlayer(vanishPlayer);
+        }
 
     }
 

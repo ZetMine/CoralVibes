@@ -15,8 +15,9 @@ public class Hologram implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        Utils utils = new Utils();
         if (!(sender instanceof Player)) {
-            sender.sendMessage(ChatColor.RED+"Seul les joueurs peuvent executer cette commande.");
+            sender.sendMessage(utils.cvPrefix+ChatColor.RED+"Seul les joueurs peuvent executer cette commande.");
 
             return true;
         }

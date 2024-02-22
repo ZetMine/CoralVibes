@@ -1,13 +1,11 @@
 package net.zetmine.coralvibes;
 
 import net.luckperms.api.LuckPerms;
-import net.zetmine.coralvibes.commands.Broadcast;
-import net.zetmine.coralvibes.commands.Hologram;
-import net.zetmine.coralvibes.commands.Maintenance;
-import net.zetmine.coralvibes.commands.Vanish;
+import net.zetmine.coralvibes.commands.*;
 import net.zetmine.coralvibes.listeners.*;
 import net.zetmine.coralvibes.utils.ConfigManager;
 import net.zetmine.coralvibes.utils.InventoryManager;
+import net.zetmine.coralvibes.utils.PlaytimeUpdater;
 import net.zetmine.coralvibes.utils.ScoreboardUpdater;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
@@ -56,10 +54,13 @@ public class Main extends JavaPlugin {
         this.getCommand("maintenance").setExecutor(new Maintenance(configManager));
         this.getCommand("hologram").setExecutor(new Hologram());
         this.getCommand("vanish").setExecutor(new Vanish());
+        this.getCommand("lookup").setExecutor(new Lookup());
 
         ScoreboardUpdater scoreboardUpdater = new ScoreboardUpdater();
         scoreboardUpdater.startUpdater();
 
+        PlaytimeUpdater playtimeUpdater = new PlaytimeUpdater();
+        playtimeUpdater.startUpdater();
 
     }
 }

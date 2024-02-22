@@ -20,3 +20,6 @@ commands:
     permission: coralvibe.vanish
     description: Vanish
     aliases: [ holo ]
+  lookup:
+    permission: coralvibe.vanish
+    description: Lookup
