@@ -20,3 +20,7 @@ commands:
     permission: coralvibe.vanish
     description: Vanish
     aliases: [ holo ]
+  afk:
+    permission: coralvibe.afk
+    description: Makes you afk.
+    aliases: [ awayfromkeyboard ]

@@ -53,6 +53,7 @@ public class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new PlayerChat(lpApi), this);
 
         this.getCommand("broadcast").setExecutor(new Broadcast());
+        this.getCommand("afk").setExecutor(new Afk());
         this.getCommand("maintenance").setExecutor(new Maintenance(configManager));
         this.getCommand("hologram").setExecutor(new Hologram());
         this.getCommand("vanish").setExecutor(new Vanish());
