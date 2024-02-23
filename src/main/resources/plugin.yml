@@ -22,5 +22,5 @@ commands:
     aliases: [ holo ]
   afk:
     permission: coralvibe.afk
-    description: Makes you afk.
+    description: Makes you afk with this command.
     aliases: [ awayfromkeyboard ]

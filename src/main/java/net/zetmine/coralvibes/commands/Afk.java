@@ -16,8 +16,6 @@ public class Afk implements CommandExecutor {
         Player player = (Player) sender;
 
         // Votre logique pour gérer la commande /afk ici
-        // Par exemple, vous pourriez envoyer un message au joueur indiquant qu'il est désormais AFK.
-
         player.sendMessage(ChatColor.GREEN +"Vous êtes maintenant AFK.");
 
         return true;

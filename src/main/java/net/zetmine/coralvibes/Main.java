@@ -53,6 +53,9 @@ public class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new PlayerChat(lpApi), this);
 
         this.getCommand("broadcast").setExecutor(new Broadcast());
+
+        // Si tu vois ça normalement le commit a marché
+
         this.getCommand("afk").setExecutor(new Afk());
         this.getCommand("maintenance").setExecutor(new Maintenance(configManager));
         this.getCommand("hologram").setExecutor(new Hologram());
